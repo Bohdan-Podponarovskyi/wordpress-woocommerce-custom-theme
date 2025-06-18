@@ -1,0 +1,19 @@
+{
+    "name": "avtocase/carousel-banners",
+    "title": "Карусель банерів",
+    "description": "Галерея фул контент банерів",
+    "category": "avtocase-blocks",
+    "script": "core-editor-script",
+    "icon": "format-gallery",
+    "keywords": ["банери", "галерея", "карусель", "слайдер"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "carousel-banners.php"
+    },
+    "supports": {
+        "anchor": false,
+        "align": false,
+        "className": false,
+        "customClassName": false
+    }
+}

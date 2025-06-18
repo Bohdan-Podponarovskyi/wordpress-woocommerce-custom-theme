@@ -1,0 +1,22 @@
+@use '../abstracts/variables';
+
+.badge {
+    padding: 0.8rem 1.6rem;
+    border-radius: variables.$border-radius-button;
+    font-weight: 600;
+
+    &--onsale {
+        color: variables.$color-text-light;
+        background: variables.$color-button-accent;
+    }
+
+    &--new {
+        color: variables.$color-text-light;
+        background: #6020B2;
+    }
+
+    &--oos {
+        color: variables.$color-text-secondary;
+        background: #F0F0F0;
+    }
+}

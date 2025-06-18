@@ -1,0 +1,19 @@
+{
+    "name": "avtocase/collection-products",
+    "title": "Колекція продуктів",
+    "description": "Колекція продуктів",
+    "category": "avtocase-blocks",
+    "script": "core-editor-script",
+    "icon": "products",
+    "keywords": ["продукти"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "collection-products.php"
+    },
+    "supports": {
+        "anchor": false,
+        "align": false,
+        "className": false,
+        "customClassName": false
+    }
+}

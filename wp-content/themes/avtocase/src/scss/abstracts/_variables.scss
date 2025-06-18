@@ -1,0 +1,71 @@
+// Grid
+$sm: 440px;
+$md: 744px;
+$lg: 1140px;
+$xl: 1440px;
+$xxl: 1728px;
+
+// 440 - min small tablet
+// 744 - min large tablet
+// 1140 - min desktop
+// 1440 - min large desktop
+// 1728 - min wide desktop
+
+// below 1140 - h3
+// above 1140 - h2
+// TODO: refactor with figma variables mapped to component variables
+// Colors
+$color-default-white: #ffffff;
+$color-default-black: #000000;
+
+// Text colors
+$color-text-dark: #14191e;
+$color-text-light: $color-default-white;
+$color-text-label: #e85423;
+$color-text-secondary: #6e6e6e;
+
+// Backgrounds buttons
+$color-button-dark: #14191e;
+$color-button-light: $color-default-white;
+$color-button-accent: #e85423;
+
+// Backgrounds
+$color-background-body: #f0f0f0;
+$color-background-card: $color-default-white;
+$color-background-dark: $color-default-black;
+$color-background-light: $color-default-white;
+$color-background-link: #d2d2d252;
+$color-background-label: #ffdbc3;
+
+// Borders
+$color-border-default: #d2d2d2;
+
+// State colors
+$hover-background-nav: rgba(110, 110, 110, 0.2);
+$active-background-nav: rgba(110, 110, 110, 0.05);
+
+// Other colors
+$color-alert: #e1194b;
+
+// TODO: refactor with sizes
+// Sizes vars
+$border-radius-main: 2.4rem;
+$border-radius-medium: 1.6rem;
+$border-radius-button: 1.2rem;
+$border-radius-xs: 0.8rem;
+
+// Animation & Transition Durations
+$transition-durations: (
+    'fast': 0.15s,
+    'medium': 0.3s,
+    'slow': 0.5s,
+    'very-slow': 1s,
+);
+
+$transition-timing-functions: (
+    'ease': ease,
+    'ease-in': ease-in,
+    'ease-out': ease-out,
+    'ease-in-out': ease-in-out,
+    'linear': linear,
+);

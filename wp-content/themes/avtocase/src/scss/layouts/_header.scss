@@ -1,0 +1,50 @@
+@use '../abstracts/breakpoints';
+@use '../abstracts/variables';
+
+.header {
+    display: none;
+    z-index: 100;
+    position: absolute;
+
+
+    @include breakpoints.up(lg) {
+        display: block;
+        border-radius: variables.$border-radius-medium;
+
+        background: rgba(255, 255, 255, 0.60);
+        border: 1px solid rgba(210, 210, 210, 0.70);
+        backdrop-filter: blur(28px);
+
+        color: variables.$color-text-dark;
+
+        left: 2.4rem;
+        right: 2.4rem;
+        top: 2.4rem;
+        padding: 1.6rem 2.4rem;
+
+        &--transparent {
+            background: transparent;
+            backdrop-filter: none;
+            border: 1px solid transparent;
+            top: 1.5vw;
+            color: variables.$color-text-light;
+            padding: 2.4rem;
+        }
+    }
+
+    &__inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 2.4rem;
+    }
+
+    .logo {
+        svg {
+            max-width: 100%;
+            min-width: 15rem;
+        }
+
+        margin: 0 auto;
+    }
+}

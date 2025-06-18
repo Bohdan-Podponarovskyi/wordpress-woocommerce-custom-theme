@@ -1,0 +1,149 @@
+@use '../abstracts/breakpoints';
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+.mini-cart {
+    border-radius: variables.$border-radius-main;
+    border: 2px solid rgba(0, 0, 0, 0.20); // TODO: check variables
+    background: rgba(240, 240, 240, 0.80);
+    backdrop-filter: blur(50px);
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+
+    &__header {
+        padding: 0.6rem 1.2rem;
+        border-radius: variables.$border-radius-main;
+        background: variables.$color-default-white;
+        border: 1px solid variables.$color-border-default;
+        backdrop-filter: blur(28px);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__title {
+        font-size: 1.6rem;
+    }
+
+    &__close {
+        height: 32px;
+        width: 32px;
+        padding: 0.4rem;
+    }
+
+
+    &__items {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+    }
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        padding: 0.8rem;
+        border-radius: variables.$border-radius-button;
+        background: variables.$color-default-white;
+        border: 1px solid variables.$color-border-default;
+        backdrop-filter: blur(28px);
+    }
+
+    &__item-img {
+        flex: 1 0 96px;
+        width: 96px;
+        height: 96px;
+        border-radius: variables.$border-radius-button;
+        object-fit: cover;
+        border: 1px solid variables.$color-default-white;
+        background: rgba(234, 234, 234, 0.70);
+
+
+        &.img-wrap, & .img-wrap {
+            @include mixins.aspect-ratio(96, 96);
+        }
+    }
+
+    &__item-details {
+        padding: 0.8rem 1.6rem 0 1.6rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__item-title {
+        font-size: 1.6rem;
+    }
+
+    &__item-totals {
+        flex: 1 0 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 0.8rem;
+        height: 100%;
+        padding-top: 0.8rem;
+    }
+
+    &__item-controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.8rem;
+    }
+
+    &__item-remove {
+        line-height: 0;
+    }
+
+    &__footer {
+        display: flex;
+        flex-direction: column;
+        gap: 2.4rem;
+        padding: 1.2rem;
+        border-radius: variables.$border-radius-main;
+        background: variables.$color-default-white;
+        border: 1px solid variables.$color-border-default;
+        backdrop-filter: blur(28px);
+    }
+
+    &__checkout-btn {
+        width: 100%;
+    }
+}
+
+// TODO: to separate file
+.cart-counter {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    background: variables.$color-button-dark;
+    color: variables.$color-default-white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.qty {
+    display: flex;
+    border-radius: variables.$border-radius-xs;
+    background: variables.$color-background-body;
+    height: 40px;
+
+    > * {
+        width: 40px;
+    }
+
+    &__btn {
+        padding: 0.8rem;
+    }
+}
+
+.variation {
+    display: flex;
+    flex-direction: column;
+    font-size: 1.2rem;
+    color: variables.$color-text-secondary;
+}

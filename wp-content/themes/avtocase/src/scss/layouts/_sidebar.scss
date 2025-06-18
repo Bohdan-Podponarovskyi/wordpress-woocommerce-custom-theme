@@ -1,0 +1,24 @@
+@use '../abstracts/breakpoints';
+@use '../abstracts/variables';
+
+.sidebar {
+    grid-area: sidebar;
+//    TODO: temp
+    background-color: variables.$color-button-dark;
+    border-radius: 50%;
+    backdrop-filter: blur(28px);
+    padding: 2.4rem;
+    max-height: 600px;
+    width: 100%;
+    height: 56px;
+
+    @include breakpoints.up(lg) {
+        border-radius: variables.$border-radius-main;
+        height: 100%;
+        background-color: variables.$color-default-white;
+    }
+
+    #sidebar {
+        display: none !important;
+    }
+}

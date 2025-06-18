@@ -1,0 +1,29 @@
+.modal {
+    position: fixed;
+    top: 24px;
+    bottom: 24px;
+    z-index: 200;
+    max-width: 544px;
+    width: 100%;
+    height: calc(100% - 48px);
+
+    &--left {
+        left: 24px;
+    }
+
+    &--right {
+        right: 24px;
+    }
+}
+
+.modal-overlay-active {
+    overflow: hidden;
+
+    &:after {
+        content: '';
+        position: fixed;
+        inset: 0;
+        background-color: rgba(0, 0, 0, 0.20);
+        backdrop-filter: blur(10px);
+    }
+}

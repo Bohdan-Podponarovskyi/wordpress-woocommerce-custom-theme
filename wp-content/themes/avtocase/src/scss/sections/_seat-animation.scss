@@ -1,0 +1,86 @@
+@use '../abstracts/breakpoints';
+
+.seat {
+  position: relative;
+  overflow: hidden;
+
+  &__inner {
+    text-align: center;
+
+    @include breakpoints.up(lg) {
+      height: 100vh;
+    }
+  }
+
+  &__title {
+    margin-bottom: 1.6rem;
+  }
+
+  &__label {
+    margin: 0 auto;
+  }
+
+  &__img-wrap {
+    height: 100%;
+    padding: 5.6rem 0 0;
+
+    @include breakpoints.up(md) {
+      padding: 9.6rem 8rem 0;
+    }
+
+    @include breakpoints.up(lg) {
+      height: calc(100vh - 256px);
+      padding: 0;
+    }
+  }
+
+  &__img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 490 / 640;
+
+    @include breakpoints.up(lg) {
+
+    }
+  }
+
+  .wheel {
+    position: absolute;
+    display: none;
+    opacity: 0;
+    bottom: 18rem;
+    width: 24vw;
+
+    @include breakpoints.up(lg) {
+      display: block;
+    }
+
+    &-left {
+      left: 0;
+    }
+
+    &-right {
+      right: 0;
+    }
+  }
+
+  &__link {
+    display: inline-block;
+    margin-top: 5.6rem;
+
+    @include breakpoints.up(md) {
+      margin-top: 9.6rem;
+    }
+
+    @include breakpoints.up(lg) {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 4rem;
+      opacity: 0;
+      margin-top: 0;
+    }
+  }
+}

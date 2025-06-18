@@ -1,0 +1,7 @@
+@use '../abstracts/variables';
+
+.card {
+    background-color: variables.$color-background-card;
+    border-radius: variables.$border-radius-main;
+    overflow: hidden;
+}

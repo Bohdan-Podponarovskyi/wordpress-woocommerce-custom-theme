@@ -1,0 +1,4 @@
+@use '../abstracts/mixins';
+
+@include mixins.font-face('Montserrat', '../fonts/Montserrat-Regular', 400);
+@include mixins.font-face('Montserrat', '../fonts/Montserrat-SemiBold', 600);

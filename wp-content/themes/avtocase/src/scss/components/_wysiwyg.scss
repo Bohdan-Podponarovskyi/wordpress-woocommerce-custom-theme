@@ -1,0 +1,19 @@
+@use '../abstracts/variables';
+@use '../abstracts/breakpoints';
+@use '../abstracts/mixins';
+
+.custom-wysiwyg {
+    p {
+
+    }
+
+    strong {
+        color: variables.$color-text-label;
+        font-weight: inherit;
+    }
+
+    del {
+        font-size: 1.4rem;
+        text-decoration: none;
+    }
+}

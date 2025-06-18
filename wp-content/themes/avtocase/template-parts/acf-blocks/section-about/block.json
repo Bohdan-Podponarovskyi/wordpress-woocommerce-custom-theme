@@ -1,0 +1,18 @@
+{
+    "name": "avtocase/section-about",
+    "title": "Секція Про нас",
+    "description": "Секція з інформацією",
+    "category": "avtocase-blocks",
+    "icon": "info",
+    "keywords": ["оплата", "доставка", "компанія", "про нас"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "section-about.php"
+    },
+    "supports": {
+        "anchor": false,
+        "align": false,
+        "className": false,
+        "customClassName": false
+    }
+}

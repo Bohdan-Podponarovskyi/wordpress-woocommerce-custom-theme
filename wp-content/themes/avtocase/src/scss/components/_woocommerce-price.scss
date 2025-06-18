@@ -1,0 +1,21 @@
+@use '../abstracts/breakpoints';
+@use '../abstracts/variables';
+@use '../abstracts/mixins';
+
+.price {
+    display: flex;
+    justify-content: flex-end;
+    column-gap: 1rem;
+    flex-wrap: wrap;
+    font-weight: 600;
+    white-space: nowrap;
+
+    del {
+        color: variables.$color-text-secondary;
+        font-size: 1.3rem;
+    }
+
+    ins {
+        text-decoration: none;
+    }
+}

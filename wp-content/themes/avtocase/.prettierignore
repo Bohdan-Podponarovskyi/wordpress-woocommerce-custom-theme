@@ -1,0 +1,4 @@
+# Ignore artifacts:
+assets
+acf-json
+docs

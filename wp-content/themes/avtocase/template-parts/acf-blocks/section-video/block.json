@@ -1,0 +1,18 @@
+{
+    "name": "avtocase/section-video",
+    "title": "Повноекранне відео",
+    "description": "Для головного екрану або відео контенту",
+    "category": "avtocase-blocks",
+    "icon": "video-alt3",
+    "keywords": ["відео", "головний екран"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "section-video.php"
+    },
+    "supports": {
+        "anchor": false,
+        "align": false,
+        "className": false,
+        "customClassName": false
+    }
+}

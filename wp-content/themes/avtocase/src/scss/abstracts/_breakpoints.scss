@@ -1,0 +1,85 @@
+@use 'functions';
+@use 'variables';
+
+/// Creates a media query for minimum width breakpoints
+/// @param {String} $breakpoint - The breakpoint name (xxl, xl, lg, md, sm)
+/// @content - The content to be included inside the media query
+/// @example scss
+///   .element {
+///     @include up(md) {
+///       display: flex;
+///     }
+///   }
+/// @example css
+///   @media screen and (min-width: 768px) {
+///     .element {
+///       display: flex;
+///     }
+///   }
+@mixin up($breakpoint) {
+    @if $breakpoint == 'xxl' {
+        @media screen and (min-width: variables.$xxl) {
+            @content;
+        }
+    } @else if $breakpoint == 'xl' {
+        @media screen and (min-width: variables.$xl) {
+            @content;
+        }
+    } @else if $breakpoint == 'lg' {
+        @media screen and (min-width: variables.$lg) {
+            @content;
+        }
+    } @else if $breakpoint == 'md' {
+        @media screen and (min-width: variables.$md) {
+            @content;
+        }
+    } @else if $breakpoint == 'sm' {
+        @media screen and (min-width: variables.$sm) {
+            @content;
+        }
+    } @else {
+        @media screen and (min-width: variables.$lg) {
+            @content;
+        }
+    }
+}
+
+/// Creates a media query for maximum width breakpoints
+/// @param {String} $breakpoint - The breakpoint name (xl, lg, md, sm)
+/// @content - The content to be included inside the media query
+/// @note The actual max-width value is calculated by subtracting 0.02 from the next breakpoint size
+/// @example scss
+///   .element {
+///     @include down(md) {
+///       flex-direction: column;
+///     }
+///   }
+/// @example css
+///   @media screen and (max-width: 1023.98px) {
+///     .element {
+///       flex-direction: column;
+///     }
+///   }
+@mixin down($breakpoint) {
+    @if $breakpoint == 'sm' {
+        @media screen and (max-width: #{variables.$md - 0.02}) {
+            @content;
+        }
+    } @else if $breakpoint == 'md' {
+        @media screen and (max-width: #{variables.$lg - 0.02}) {
+            @content;
+        }
+    } @else if $breakpoint == 'lg' {
+        @media screen and (max-width: #{variables.$xl - 0.02}) {
+            @content;
+        }
+    } @else if $breakpoint == 'xl' {
+        @media screen and (max-width: #{variables.$xxl - 0.02}) {
+            @content;
+        }
+    } @else {
+        @media screen and (max-width: #{variables.$lg - 0.02}) {
+            @content;
+        }
+    }
+}

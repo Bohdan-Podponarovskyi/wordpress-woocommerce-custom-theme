@@ -1,0 +1,137 @@
+@use '../abstracts/variables';
+@use '../abstracts/breakpoints';
+
+/**
+ * button - main class for button
+ * (use classes in this order) button button--background button--type
+ * button button--background (primary, promo, outline)
+ * button button--background button--type (text, icon, text-icon, text-icon-double)
+ * button button--background button--type button--rounded - for rounded buttons
+ * for example: button button--primary button--text-icon button--rounded
+ * if button just with text use only 2 classes: button button--background
+ */
+
+.btn {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding: 1.6rem 2.4rem;
+    background-color: transparent;
+    border: none;
+    border-radius: variables.$border-radius-button;
+    cursor: pointer;
+    font-size: 1.6rem;
+    line-height: 150%;
+    font-weight: 600;
+    z-index: 2;
+    user-select: none;
+
+    &__counter {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+
+        width: 2.4rem;
+        height: 2.4rem;
+        font-size: 1.2rem;
+        color: variables.$color-text-light;
+        background-color: variables.$color-alert;
+        border-radius: 50%;
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        border-radius: 1.2rem;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        transition: all 0.15s ease-in-out;
+        z-index: -1;
+        pointer-events: none;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+            &::before {
+                transform: scale(1.07);
+            }
+        }
+    }
+
+    &:active {
+        &::before {
+            transform: scale(0.9);
+        }
+    }
+
+    // background buttons
+    &--primary {
+        color: variables.$color-text-light;
+
+        &::before {
+            background-color: variables.$color-button-dark;
+        }
+    }
+
+    &--light {
+        color: variables.$color-text-dark;
+
+        &::before {
+            background-color: variables.$color-button-light;
+        }
+    }
+
+    &--outline {
+        color: variables.$color-text-dark;
+
+        &::before {
+            border: 2px solid variables.$color-button-dark;
+        }
+    }
+
+    &--outline-light {
+        color: variables.$color-text-light;
+
+        &::before {
+            border: 2px solid variables.$color-button-light;
+        }
+    }
+
+    &--promo {
+        color: variables.$color-text-light;
+
+        &::before {
+            background-color: variables.$color-button-accent;
+        }
+    }
+
+    // type buttons
+    &--icon {
+        padding: 1.6rem;
+    }
+
+    &--text-icon-left {
+        padding: 1.6rem 2.4rem 1.6rem 2rem;
+    }
+
+    &--text-icon-right {
+        padding: 1.6rem 2rem 1.6rem 2.4rem;
+    }
+
+    &--text-icon-double {
+        padding: 1.6rem 2rem;
+    }
+
+    // buttons modifiers
+    &--rounded::before {
+        border-radius: 5.6rem;
+    }
+
+    &__text {
+        will-change: transform;
+    }
+}

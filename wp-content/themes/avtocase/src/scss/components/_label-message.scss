@@ -1,0 +1,18 @@
+@use '../abstracts/variables';
+@use '../abstracts/breakpoints';
+
+.label-message {
+    width: fit-content;
+    background-color: variables.$color-background-label;
+    color: variables.$color-text-label;
+    font-size: 1.4rem;
+    line-height: 150%;
+    font-weight: 600;
+    padding: 1.2rem;
+    border-radius: 1.4rem;
+    will-change: transform;
+
+    @include breakpoints.up(lg) {
+        font-size: 1.6rem;
+    }
+}

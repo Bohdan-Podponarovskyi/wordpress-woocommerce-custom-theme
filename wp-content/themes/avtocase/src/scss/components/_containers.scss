@@ -1,0 +1,41 @@
+@use '../abstracts/variables';
+@use '../abstracts/breakpoints';
+
+.container {
+    max-width: 1728px;
+    padding: 0 1.6rem;
+    margin: 0 auto;
+
+    @include breakpoints.up(lg) {
+        padding: 0 5.6rem;
+    }
+
+    &--sm {
+        @include breakpoints.up(lg) {
+            padding: 0 9.6rem;
+        }
+
+        @include breakpoints.up(xl) {
+            padding: 0 19.2rem;
+        }
+    }
+
+    &--md {
+        @include breakpoints.up(lg) {
+            padding: 0 5.6rem;
+        }
+
+        @include breakpoints.up(xl) {
+            padding: 0 14.4rem;
+        }
+    }
+
+    &--full-mob {
+        max-width: 1728px;
+        margin: 0 auto;
+
+        @include breakpoints.up(lg) {
+            padding: 0 5.6rem;
+        }
+    }
+}

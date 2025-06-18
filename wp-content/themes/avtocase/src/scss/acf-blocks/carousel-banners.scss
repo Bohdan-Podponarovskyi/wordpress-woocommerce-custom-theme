@@ -1,0 +1,94 @@
+@use '../abstracts/variables';
+@use '../abstracts/breakpoints';
+@use '../abstracts/mixins';
+
+.carousel-banners {
+    color: variables.$color-default-white;
+
+    &__inner {
+        position: relative;
+    }
+
+    &__swiper {
+        border-radius: variables.$border-radius-main;
+    }
+
+    &__swiper-nav {
+        margin: 5.6rem auto 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.8rem;
+
+        @include breakpoints.up(lg) {
+            position: absolute;
+            bottom: 96px;
+            left: 56px;
+        }
+
+        .swiper-btn {
+            @include breakpoints.up(lg) {
+                color: variables.$color-text-light;
+
+                &::before {
+                    border: 2px solid variables.$color-text-light;
+                    background: transparent;
+                }
+            }
+        }
+    }
+
+    &__item {
+        border-radius: variables.$border-radius-main;
+    }
+
+    &__item-content {
+        position: absolute;
+        bottom: 56px;
+        width: 100%;
+        padding: 0 1.6rem;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include breakpoints.up(lg) {
+            padding: 0 5.6rem;
+            align-items: flex-start;
+            top: 96px;
+            bottom: auto;
+        }
+
+        h3 {
+            padding-bottom: 1.6rem;
+        }
+
+        p {
+            padding-bottom: 3.2rem;
+        }
+    }
+
+    &__img-wrap {
+        $height-mobile: 584px;
+        $height-desktop: 488px;
+
+        height: $height-mobile;
+        background-color: variables.$color-default-white;
+
+        @include breakpoints.up(lg) {
+            height: $height-desktop;
+        }
+
+        img {
+            height: $height-mobile;
+            width: 100%;
+            object-fit: cover;
+            object-position: center top;
+
+            @include breakpoints.up(lg) {
+                height: $height-desktop;
+                object-position: 80% 75%;
+            }
+        }
+    }
+}

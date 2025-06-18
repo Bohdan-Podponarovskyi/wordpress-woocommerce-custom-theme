@@ -1,0 +1,59 @@
+@use '../abstracts/breakpoints';
+@use '../abstracts/variables';
+
+.grid {
+    &--category {
+        display: grid;
+        grid-template-columns: auto 56px;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 'breadcrumbs breadcrumbs'
+                             'header sidebar'
+                             'products products';
+        column-gap: 1rem;
+
+        @include breakpoints.up(lg) {
+            grid-template-columns: 328px 1fr;
+            grid-template-rows: auto auto auto;
+
+            grid-template-areas: 'sidebar breadcrumbs'
+                                 'sidebar header'
+                                 'sidebar products';
+            column-gap: 2.4rem;
+        }
+
+        @include breakpoints.up(xl) {
+            grid-template-columns: 384px 1fr;
+        }
+    }
+
+    &--products {
+        display: grid;
+        gap: 1.6rem;
+
+        @include breakpoints.up(md) {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.4rem;
+        }
+
+        @include breakpoints.up(xl) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &--swiper {
+        @include breakpoints.up(lg) {
+            transform: none !important; // Override Swiper inline styles
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.4rem;
+        }
+
+        @include breakpoints.up(xl) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @include breakpoints.up(xxl) {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}

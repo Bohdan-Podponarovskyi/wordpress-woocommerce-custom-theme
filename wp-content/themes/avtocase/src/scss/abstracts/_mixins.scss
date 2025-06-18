@@ -1,0 +1,51 @@
+@use 'sass:math';
+@use 'sass:map';
+@use './variables';
+
+/// Creates a responsive aspect ratio container using padding-bottom technique
+/// @param {Number} $height - The height value of the aspect ratio or image height from the Figma layout
+/// @param {Number} $width - The width value of the aspect ratio or image width from the Figma layout
+/// @example scss - Usage
+///   .element {
+///     @include aspect-ratio(9, 16);
+///   }
+@mixin aspect-ratio($height, $width) {
+    padding-bottom: math.percentage(math.div($height, $width));
+}
+
+/// Applies CSS transition with predefined duration and timing function values
+/// @param {String} $properties - CSS properties to transition
+/// @param {String} $duration ['medium'] - Duration name from $transition-durations map
+/// @param {String} $timing ['ease-out'] - Timing function name from $transition-timing-functions map
+/// @example scss - Usage
+///   .element {
+///     @include transition(opacity);
+///     @include transition(all, 'slow', 'ease-in');
+///   }
+@mixin transition($properties, $duration: 'medium', $timing: 'ease-out') {
+    $duration-value: map.get(variables.$transition-durations, $duration);
+    $timing-value: map.get(variables.$transition-timing-functions, $timing);
+
+    transition: $properties $duration-value $timing-value;
+}
+
+/// Generates @font-face declarations for web fonts with optimized loading
+/// @param {String} $name - The font family name to use in CSS
+/// @param {String} $path - The base path to font files (without extension)
+/// @param {Number} $weight [400] - Font weight (100-900)
+/// @param {String} $style [normal] - Font style (normal, italic, oblique)
+/// @param {String} $display [swap] - Font display strategy (auto, block, swap, fallback, optional)
+/// @example scss - Usage
+///   @include font-face('Inter', '/fonts/inter-regular', 400);
+///   @include font-face('Inter', '/fonts/inter-bold', 700, normal, swap);
+///   @include font-face('Playfair Display', '/fonts/playfair-italic', 400, italic);
+@mixin font-face($name, $path, $weight: 400, $style: normal, $display: swap) {
+    @font-face {
+        font-family: $name;
+        font-style: $style;
+        font-weight: $weight;
+        font-display: $display;
+        src: url('#{$path}.woff2') format('woff2'),
+            url('#{$path}.woff') format('woff');
+    }
+}

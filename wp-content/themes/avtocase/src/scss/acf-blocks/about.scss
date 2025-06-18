@@ -1,0 +1,166 @@
+@use '../abstracts/variables';
+@use '../abstracts/breakpoints';
+@use '../abstracts/mixins';
+
+.about {
+    &__container {
+        @include breakpoints.up(sm) {
+            width: 90%;
+        }
+
+        @include breakpoints.up(md) {
+            width: 80%;
+        }
+
+        @include breakpoints.up(xxl) {
+            width: 70%;
+        }
+    }
+
+    &__top-wrap {
+        @include breakpoints.up(lg) {
+            display: flex;
+        }
+    }
+
+    &__top-card {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        flex: 1 1 auto;
+    }
+
+    &__icon-wrap {
+        display: flex;
+        justify-content: center;
+        padding: 1.6rem 3.2rem;
+        border-radius: 14.4rem;
+        margin: 5.6rem 0 2.4rem 0;
+        color: variables.$color-default-white;
+    }
+
+    &__icon-card {
+        background: variables.$color-background-dark;
+    }
+
+    &__icon-box {
+        background: variables.$color-button-accent;
+    }
+
+    &__text-wrap {
+        padding: 0 2.4rem 5.6rem 2.4rem;
+    }
+
+    &__text-title {
+        margin-bottom: 1.6rem;
+    }
+
+    &__icon-wrap {
+        .svg-wrap {
+            width: 32px;
+            height: 32px;
+        }
+    }
+
+    &__icon-arrow {
+        text-align: center;
+        margin: 2.4rem 0 2.4rem 0;
+        line-height: 0;
+        color: variables.$color-text-secondary;
+
+        @include breakpoints.up(lg) {
+            display: flex;
+            align-items: center;
+            margin: 0 1.6rem;
+            flex: 0 0 auto;
+        }
+
+        .svg-wrap {
+            @include breakpoints.up(lg) {
+                transform: rotate(270deg);
+            }
+        }
+    }
+
+    &__img-wrap {
+        border-radius: variables.$border-radius-main;
+        overflow: hidden;
+        background-color: transparent;
+
+        @include mixins.aspect-ratio(340, 536);
+    }
+
+    &__bottom-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 2.4rem;
+        padding: 5.6rem 2.4rem;
+        background-size: cover;
+        border-radius: 2.4rem;
+        gap: 3.2rem;
+        color: variables.$color-default-white;
+        background-color: variables.$color-default-white;
+        overflow: hidden;
+
+        @include breakpoints.up(lg) {
+            padding: 9.6rem 2.4rem;
+            gap: 5.6rem;
+        }
+
+        @include breakpoints.up(xl) {
+            margin-top: 3.2rem;
+        }
+    }
+
+    &__bottom-top {
+        display: flex;
+        flex-direction: column;
+        max-width: 536px;
+        gap: 3.2rem;
+
+        @include breakpoints.up(lg) {
+            gap: 5.6rem;
+        }
+    }
+
+    &__bottom-title {
+        text-align: center;
+
+        span {
+            color: variables.$color-text-label;
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        row-gap: 1.6rem;
+
+        @include breakpoints.up(md) {
+            flex-direction: unset;
+            row-gap: 4.8rem;
+        }
+
+        &-benefits {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            background-color: #373735;
+            padding: 1.2rem 3.2rem;
+            text-align: center;
+            border-radius: 2.4rem;
+        }
+    }
+
+    &__bottom-descr {
+        max-width: 440px;
+        text-align: center;
+
+        @include breakpoints.up(lg) {
+            max-width: 732px;
+        }
+    }
+}

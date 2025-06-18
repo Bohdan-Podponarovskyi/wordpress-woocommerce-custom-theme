@@ -1,0 +1,18 @@
+{
+    "name": "avtocase/carousel-cards",
+    "title": "Карусель карток",
+    "description": "Секція зі слайдером карток і заголовком",
+    "category": "avtocase-blocks",
+    "icon": "slides",
+    "keywords": ["картки", "слайдер", "карусель"],
+    "acf": {
+        "mode": "preview",
+        "renderTemplate": "carousel-cards.php"
+    },
+    "supports": {
+        "anchor": false,
+        "align": false,
+        "className": false,
+        "customClassName": false
+    }
+}

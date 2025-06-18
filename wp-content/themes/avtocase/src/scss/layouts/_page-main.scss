@@ -1,0 +1,58 @@
+@use '../abstracts/variables';
+@use '../abstracts/breakpoints';
+@use '../abstracts/mixins';
+
+.main {
+    min-height: 100vh;
+    background-color: variables.$color-background-body;
+    border-radius: 0 0 68px 68px;
+    margin-bottom: -9.6rem;
+    position: relative;
+    z-index: 1;
+}
+
+.avtocase-page {
+    padding-top: 12.0rem;
+    padding-bottom: 9.6rem;
+
+    @include breakpoints.up(lg) {
+        padding-bottom: 19.2rem;
+    }
+
+    section:not(:last-child) {
+        padding-bottom: 9.6rem;
+
+        @include breakpoints.up(lg) {
+            padding-bottom: 19.2rem;
+        }
+    }
+
+    &--home {
+        padding-top: 0;
+
+        section {
+            &:first-child {
+                padding-bottom: 5.6rem;
+
+                @include breakpoints.up(lg) {
+                    padding-bottom: 9.6rem;
+                }
+            }
+        }
+    }
+
+    &--shop {
+        .woocommerce-products-header,
+        .woocommerce-breadcrumb {
+            display: none !important;
+        }
+
+        section:not(:last-child) {
+            padding-bottom: 2.4rem;
+
+            @include breakpoints.up(lg) {
+                padding-bottom: 5.6rem;
+            }
+        }
+    }
+}
